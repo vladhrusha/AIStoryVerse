@@ -6,7 +6,8 @@
   "scripts": {
     "client": "npm run start --prefix client",
     "format": "prettier --write && eslint --fix",
-    "lint": "prettier --check && eslint --check",
+    "linthuy": "prettier --check && eslint --check",
+    "lint": "eslint --fix --ext .ts,.tsx ./client/src",
     "prepare": "husky install"
   },
   "repository": {
@@ -35,8 +36,9 @@
     "prettier": "^3.0.1"
   },
   "lint-staged": {
-    "**/*.ts": "tsc-files --noEmit",
-    "**/*.tsx": "tsc-files --noEmit"
+    "**/*.{js,jsx,ts,tsx}": [
+      "npm run lint"
+    ]
   },
   "husky": {
     "hooks": {
