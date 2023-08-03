@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "client": "npm run start --prefix client",
+    "format": "prettier --write && eslint --fix",
+    "lint": "prettier --check && eslint --check",
     "prepare": "husky install"
   },
   "repository": {
