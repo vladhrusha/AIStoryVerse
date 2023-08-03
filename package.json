@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "client": "npm run start --prefix client"
+    "client": "npm run start --prefix client",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,17 @@
   "homepage": "https://github.com/vladhrusha/AIStoryVerse#readme",
   "devDependencies": {
     "concurrently": "^8.2.0",
-    "nodemon": "^3.0.1"
+    "husky": "^8.0.0",
+    "lint-staged": "^13.2.3",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.1"
+  },
+  "lint-staged": {
+    "**/*.ts": "tsc-files --noEmit"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
