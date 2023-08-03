@@ -1,8 +1,16 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+import { AppModule } from './modules/app.module';
+import mongoose from 'mongoose';
+import devKeys from './config/dev';
+mongoose.connect(devKeys.mongoURI);
+const PORT = process.env.PORT || 5000;
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  await app.listen(5000);
+  await app.listen(PORT);
+
+  if (!(process.env.NODE_ENV === 'production')) {
+    console.log(`app is running on port ${PORT}`);
+  }
 }
 bootstrap();
