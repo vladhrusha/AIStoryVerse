@@ -1,0 +1,24 @@
+{
+  "name": "aistoryverse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "client": "npm run start --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladhrusha/AIStoryVerse.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vladhrusha/AIStoryVerse/issues"
+  },
+  "homepage": "https://github.com/vladhrusha/AIStoryVerse#readme",
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "nodemon": "^3.0.1"
+  }
+}
