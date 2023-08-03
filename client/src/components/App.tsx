@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 function App() {
-  console.log('test lint2');
+  console.log('test lint3');
   return (
     <div className="App">
       <header className="App-header">

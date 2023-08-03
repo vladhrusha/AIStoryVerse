@@ -22,6 +22,7 @@
   "homepage": "https://github.com/vladhrusha/AIStoryVerse#readme",
   "devDependencies": {
     "concurrently": "^8.2.0",
+    "eslint": "^8.46.0",
     "husky": "^8.0.0",
     "lint-staged": "^13.2.3",
     "nodemon": "^3.0.1",
