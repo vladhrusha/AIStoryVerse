@@ -8,7 +8,8 @@
     "format": "prettier --write && eslint --fix",
     "linthuy": "prettier --check && eslint --check",
     "lint": "eslint --fix --ext .ts,.tsx ./client/src",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "echo \"Error: no test specified\""
   },
   "repository": {
     "type": "git",
