@@ -36,3 +36,7 @@ _With broad general knowledge and domain expertise, GPT-4 can follow complex ins
 32K context, input - $0.06 / 1K tokens, output - $0.12 / 1K tokens
 
 _GPT-4 is currently accessible to those who have made at least one successful payment through our developer platform._
+
+## Notes
+
+cyka, npm install passport@0.5 not npm install passport (0.6)

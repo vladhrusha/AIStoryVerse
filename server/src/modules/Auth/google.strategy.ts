@@ -19,20 +19,23 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
       session: true,
     });
   }
+
   async validate(
     _accessToken: string,
     _refreshToken: string,
     profile: any,
     done: VerifyCallback,
   ): Promise<any> {
+    console.log('fired validate');
     // NOTE move saving to services
     // https://dev.to/imichaelowolabi/how-to-implement-login-with-google-in-nest-js-2aoa#:~:text=We%20could%20easily,Route%2C%20and%20Service
     const existingUser = await User.findOne({ googleId: profile.id });
     if (existingUser) {
-      done(null, { userData: existingUser, accessToken: _accessToken }); //first argument is for error
+      console.log('here at existing');
+      done(null, existingUser); //first argument is for error
     } else {
       const user = await new User({ googleId: profile.id }).save();
-      done(null, { userData: user, accessToken: _accessToken });
+      done(null, user);
     }
   }
 }
