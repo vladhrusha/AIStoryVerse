@@ -1,4 +1,4 @@
-import mongoose, { mongo } from 'mongoose';
+import mongoose from 'mongoose';
 
 const voteSchema = new mongoose.Schema({
   storyTo: {
@@ -15,3 +15,4 @@ const voteSchema = new mongoose.Schema({
   timestamp: { type: Date, default: Date.now },
 });
 const Vote = mongoose.model('votes', voteSchema);
+export default Vote;

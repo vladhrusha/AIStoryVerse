@@ -1,4 +1,4 @@
-import mongoose, { mongo } from 'mongoose';
+import mongoose from 'mongoose';
 
 const storySchema = new mongoose.Schema({
   authorid: { type: String, required: true },
@@ -12,3 +12,4 @@ const storySchema = new mongoose.Schema({
   rating: { type: Number, default: 0 }, // ?
 });
 const Story = mongoose.model('stories', storySchema);
+export default Story;

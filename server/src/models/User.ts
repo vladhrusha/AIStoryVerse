@@ -1,4 +1,4 @@
-import mongoose, { mongo } from 'mongoose';
+import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
   googleId: { type: String, required: false, unique: true },
@@ -14,3 +14,4 @@ const userSchema = new mongoose.Schema({
   role: { type: String, enum: ['user', 'moderator', 'admin'], default: 'user' },
 });
 const User = mongoose.model('users', userSchema);
+export default User;
