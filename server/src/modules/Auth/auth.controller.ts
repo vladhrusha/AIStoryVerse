@@ -1,6 +1,7 @@
 import { Controller, Get, Req, Res, UseGuards } from '@nestjs/common';
 import { GoogleOAuthGuard } from './auth.guard';
 import { LocalSerializer } from './auth.serializer';
+import logger from '../../../tools/logger';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 @Controller('/auth/google')
 export class AuthController {
@@ -16,6 +17,7 @@ export class AuthController {
   @Get('/callback')
   @UseGuards(GoogleOAuthGuard)
   googleAuthRedirect(@Req() req, @Res() res) {
+    logger.info('test logger');
     res.redirect('/restricted');
   }
 }
