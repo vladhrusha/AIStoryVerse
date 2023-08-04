@@ -3,7 +3,6 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './Auth/auth.module';
 import { GPTModule } from './GPT/gpt.module';
-import { ConfigModule } from '@nestjs/config';
 import { APIModule } from './API/api.module';
 import { PassportModule } from '@nestjs/passport';
 

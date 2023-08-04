@@ -24,7 +24,7 @@ async function bootstrap() {
   await app.listen(PORT);
 
   if (!(process.env.NODE_ENV === 'production')) {
-    console.log(`app is running on port2 ${PORT}`);
+    console.log(`app is running on port ${PORT}`);
   }
 }
 bootstrap();

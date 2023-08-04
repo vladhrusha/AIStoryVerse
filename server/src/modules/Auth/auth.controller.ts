@@ -9,16 +9,13 @@ export class AuthController {
   // auth/google
   @Get()
   @UseGuards(GoogleOAuthGuard)
-  async googleAuth(@Req() req) {
-    console.log('fired googleAuth after guard');
-    return { msg: 'logged in' };
+  async googleAuth() {
+    return;
   }
   // auth/google/callback
   @Get('/callback')
   @UseGuards(GoogleOAuthGuard)
   googleAuthRedirect(@Req() req, @Res() res) {
-    console.log('here at callback');
-    console.log(req.user);
     res.redirect('/restricted');
   }
 }
