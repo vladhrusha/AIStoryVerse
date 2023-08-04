@@ -13,7 +13,7 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
     super({
       clientID: devKeys.googleClientID,
       clientSecret: devKeys.googleClientSecret,
-      callbackURL: '/auth/google/callback', // probably must start with localhost unlike in regular passport, note /auth for proxy
+      callbackURL: '/auth/google/callback',
       scope: ['email', 'profile'],
       proxy: true,
       session: true,
@@ -25,7 +25,7 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
     profile: any,
     done: VerifyCallback,
   ): Promise<any> {
-    // move saving to services
+    // NOTE move saving to services
     // https://dev.to/imichaelowolabi/how-to-implement-login-with-google-in-nest-js-2aoa#:~:text=We%20could%20easily,Route%2C%20and%20Service
     const existingUser = await User.findOne({ googleId: profile.id });
     if (existingUser) {

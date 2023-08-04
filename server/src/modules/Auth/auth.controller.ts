@@ -13,17 +13,12 @@ export class AuthController {
   @Get('/callback')
   @UseGuards(GoogleOAuthGuard)
   googleAuthRedirect(@Req() req, @Res() res) {
-    // return {
-    //   message: 'Successfully logged in via Google',
-    //   user: req.user,
-    // };
-    const access_token = req.user.access_token;
     res
-      .cookie('access_token', access_token, {
+      .cookie('access_token', req.user.accessToken, {
         httpOnly: true,
         secure: false,
         sameSite: 'lax',
-        expires: new Date(Date.now() + 1 * 24 * 60 * 1000),
+        expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000), //3 days
       })
       .send({ status: 'ok' });
   }
