@@ -40,7 +40,7 @@ export class GPTService {
             content: prompt,
           },
         ],
-        max_tokens: 100, // allegedly 1000 tokens is 750 words in unknown model
+        max_tokens: 250, // allegedly 1000 tokens is 750 words in unknown model
         temperature: 0.5, // randomness of generated text, 1.0 - high, 0.01 - low
       });
 
