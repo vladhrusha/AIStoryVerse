@@ -17,7 +17,6 @@ export class AuthController {
   @Get('/callback')
   @UseGuards(GoogleOAuthGuard)
   googleAuthRedirect(@Req() req, @Res() res) {
-    logger.info('test logger');
     res.redirect('/restricted');
   }
 }

@@ -7,7 +7,7 @@ import * as cookieParser from 'cookie-parser';
 const passport = require('passport');
 import * as cookieSession from 'cookie-session';
 mongoose.connect(devKeys.mongoURI);
-
+import logger from '../tools/logger';
 const PORT = process.env.PORT || 5000;
 
 async function bootstrap() {
@@ -15,7 +15,7 @@ async function bootstrap() {
   app.use(cookieParser());
   app.use(
     cookieSession({
-      maxAge: 3 * 24 * 60 * 60 * 1000, //3 days
+      maxAge: 1 * 60 * 60 * 1000, //1 hours
       keys: [devKeys.cookieKey], //selects random key from array
     }),
   );
@@ -24,7 +24,7 @@ async function bootstrap() {
   await app.listen(PORT);
 
   if (!(process.env.NODE_ENV === 'production')) {
-    console.log(`app is running on port ${PORT}`);
+    logger.info(`app is running on port ${PORT}`);
   }
 }
 bootstrap();
