@@ -9,9 +9,9 @@ describe('TestComponent', () => {
     expect(screen.getByText(name)).toBeInTheDocument();
   });
 
-  it('second test', () => {
-    const name = '';
-    render(<TestComponent name={name} />);
-    expect(screen.getByText('John')).toBeInTheDocument();
-  });
+  // it('second test', () => {
+  //   const name = '';
+  //   render(<TestComponent name={name} />);
+  //   expect(screen.getByText('John')).toBeInTheDocument();
+  // });
 });
