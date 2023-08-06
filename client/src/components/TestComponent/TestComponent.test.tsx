@@ -6,7 +6,7 @@ describe('TestComponent', () => {
   it('first test', () => {
     const name = 'Vlad';
     render(<TestComponent name={name} />);
-    expect(screen.getByText(name)).toBeInTheDocument();
+    expect(screen.getByText('name')).toBeInTheDocument();
   });
 
   it('second test', () => {
