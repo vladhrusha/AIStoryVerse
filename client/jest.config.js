@@ -1,5 +1,4 @@
 module.exports = {
-  // Add other Jest configuration options here if needed
   testEnvironment: 'jest-environment-jsdom',
   collectCoverage: true,
   collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!src/**/*.d.ts'],

@@ -35,7 +35,9 @@
     "eslint-plugin-import": "^2.28.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react": "^7.33.1",
+    "husky": "^8.0.3",
     "jest": "^27.5.1",
+    "lint-staged": "^13.2.3",
     "prettier": "^3.0.1"
   },
   "scripts": {
@@ -43,7 +45,17 @@
     "build": "react-scripts build",
     "test": "react-scripts test --watchAll=false",
     "coverage": "react-scripts test --coverage --watchAll=false",
-    "lint": "eslint src --quiet && printf '\\033[1;32m✔ No ESLint warnings or errors\\n\\033[0m'"
+    "lint": "eslint src --quiet && printf '\\033[1;32m✔ No ESLint warnings or errors\\n\\033[0m'",
+    "lint-client": "lint-staged",
+    "prepare": "cd .. && husky install client/.husky"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --quiet --fix"
+    ],
+    "*.{json,md,html,js,jsx,ts,tsx}": [
+      "prettier --write"
+    ]
   },
   "browserslist": {
     "production": [
