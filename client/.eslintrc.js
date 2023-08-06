@@ -1,21 +1,25 @@
 module.exports = {
-  parser: '@typescript-eslint/parser', // Specifies the ESLint parser
-  extends: [
-    'eslint:recommended',
-    'plugin:react/recommended', // Uses the recommended rules from @eslint-plugin-react
-    'plugin:@typescript-eslint/recommended', // Uses the recommended rules from @typescript-eslint/eslint-plugin
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:prettier/recommended',
-    'plugin:import/errors',
-    'plugin:import/warnings',
-  ],
+  env: {
+    browser: true,
+    es2021: true,
+    jest: true,
+  },
+
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
-    sourceType: 'module', // Allows for the use of imports
+    ecmaVersion: 'latest',
+    sourceType: 'module',
     ecmaFeatures: {
-      jsx: true, // Allows for the parsing of JSX
+      jsx: true,
     },
   },
+  plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier'],
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+  ],
   rules: {
     'react/prop-types': 'off',
     '@typescript-eslint/no-var-requires': 'warn',
@@ -48,16 +52,9 @@ module.exports = {
   },
   settings: {
     'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      typescript: {
+        extensions: ['.ts', '.tsx'],
       },
-      alias: {
-        map: [['@src', './src']],
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
-    },
-    react: {
-      version: 'detect',
     },
   },
 };

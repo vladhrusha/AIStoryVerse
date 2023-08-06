@@ -5,10 +5,11 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
+import { styles } from './styles';
 
 const Header: FC = () => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={styles.wrapper}>
       <AppBar position='static'>
         <Toolbar>
           <IconButton

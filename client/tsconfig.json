@@ -16,11 +16,8 @@
     "noImplicitThis": false, // Don't raise an error when TypeScript can't infer the type of 'this' in a function (can be set to true for stricter type checking)
     "strictNullChecks": false, // Don't enable strict null checks (can be set to true for stricter type checking)
     "outDir": "./build", // Output directory for compiled files
-    "baseUrl": ".", // Base URL for module resolution (relative to tsconfig.json)
-    "paths": {
-      "@components/*": ["src/components/*"]
-    } // Path mapping for import aliases (e.g., import "@components/Button")
+    "baseUrl": "./" // Base URL for module resolution (relative to tsconfig.json)
   },
-  "include": ["src/**/*"], // *** The files TypeScript should type check ***
+  "include": ["src/**/*", "src/types.d.ts"], // *** The files TypeScript should type check ***
   "exclude": ["node_modules", "build"] // *** The files to not type check ***
 }
