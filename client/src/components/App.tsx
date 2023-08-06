@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './App.scss';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './Header';
 import Landing from './Landing';
-function App() {
+
+const App: FC = () => {
   return (
     <BrowserRouter>
       <div>
@@ -14,6 +15,6 @@ function App() {
       </div>
     </BrowserRouter>
   );
-}
+};
 
 export default App;

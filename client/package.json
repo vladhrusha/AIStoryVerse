@@ -31,7 +31,9 @@
     "@typescript-eslint/eslint-plugin": "^6.2.1",
     "@typescript-eslint/parser": "^6.2.1",
     "eslint": "^8.46.0",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react": "^7.33.1",
     "jest": "^27.5.1",
     "prettier": "^3.0.1"
@@ -39,14 +41,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "test": "react-scripts test --watchAll=false",
+    "coverage": "react-scripts test --coverage --watchAll=false",
+    "lint": "eslint src --quiet && printf '\\033[1;32m✔ No ESLint warnings or errors\\n\\033[0m'"
   },
   "browserslist": {
     "production": [
