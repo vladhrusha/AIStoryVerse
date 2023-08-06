@@ -1,5 +1,5 @@
 import { PaletteOptions } from '@mui/material/styles';
-wefwefw;
+
 const palette: PaletteOptions = {
   primary: {
     main: '#2577BA',
