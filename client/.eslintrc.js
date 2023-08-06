@@ -56,5 +56,8 @@ module.exports = {
         extensions: ['.ts', '.tsx'],
       },
     },
+    react: {
+      version: 'detect',
+    },
   },
 };
