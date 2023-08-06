@@ -3,13 +3,13 @@ import { screen, render } from '@testing-library/react';
 import TestComponent from './TestComponent';
 
 describe('TestComponent', () => {
-  it('1', () => {
+  it('first test', () => {
     const name = 'Vlad';
     render(<TestComponent name={name} />);
     expect(screen.getByText(name)).toBeInTheDocument();
   });
 
-  it('2', () => {
+  it('second test', () => {
     const name = '';
     render(<TestComponent name={name} />);
     expect(screen.getByText('John')).toBeInTheDocument();
