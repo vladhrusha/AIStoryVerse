@@ -63,7 +63,7 @@ module.exports = {
 
   overrides: [
     {
-      files: ['src/**/*.jsx', 'src/**/*.tsx', 'src/**/*.js', 'src/**/*.ts'],
+      files: ['**/*.jsx', '**/*.tsx', '**/*.js', '**/*.ts'],
       parserOptions: {
         ecmaFeatures: {
           jsx: true,
