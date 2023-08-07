@@ -10,7 +10,7 @@ const getTheme = () => {
   const options: ThemeOptions = {
     palette,
     typography: typography(breakpoints),
-    components: components(breakpoints),
+    components: components(),
   };
 
   return createTheme(options);
