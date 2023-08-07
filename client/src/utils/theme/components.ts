@@ -1,8 +1,7 @@
 import { Components } from '@mui/material/styles/components';
-import { Breakpoints } from '@mui/system/createTheme/createBreakpoints';
 import { openSansFont } from './typography';
 
-const components = (breakpoints: Breakpoints): Components => ({
+const components = (): Components => ({
   MuiPaper: {
     styleOverrides: {
       root: {

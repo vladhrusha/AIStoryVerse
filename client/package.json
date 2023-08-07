@@ -28,13 +28,13 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
-    "@typescript-eslint/eslint-plugin": "^5.62.0",
-    "@typescript-eslint/parser": "^5.62.0",
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "@typescript-eslint/parser": "^6.2.1",
     "eslint": "^8.46.0",
     "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.28.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react": "^7.33.1",
-    "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.3",
     "jest": "^27.5.1",
     "lint-staged": "^13.2.3",
@@ -46,13 +46,11 @@
     "test": "react-scripts test --watchAll=false",
     "coverage": "react-scripts test --coverage --watchAll=false",
     "lint": "eslint src --quiet && printf '\\033[1;32m✔ No ESLint warnings or errors\\n\\033[0m'",
-    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
-    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
     "lint-client": "lint-staged",
     "prepare": "cd .. && husky install client/.husky"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": [
+    "src/**/*.{js,ts,tsx, jsx}": [
       "eslint --quiet --fix"
     ],
     "*.{json,md,html,js,jsx,ts,tsx}": [

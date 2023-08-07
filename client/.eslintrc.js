@@ -1,10 +1,9 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true,
+    es6: true,
     jest: true,
   },
-
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
@@ -17,6 +16,7 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier',
   ],
@@ -56,5 +56,26 @@ module.exports = {
         extensions: ['.ts', '.tsx'],
       },
     },
+    react: {
+      version: 'detect',
+    },
   },
+
+  overrides: [
+    {
+      files: ['**/*.jsx', '**/*.tsx', '**/*.js', '**/*.ts'],
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+      extends: [
+        'eslint:recommended',
+        'plugin:react/recommended',
+        'plugin:react-hooks/recommended',
+        'plugin:@typescript-eslint/recommended',
+        'prettier',
+      ],
+    },
+  ],
 };
