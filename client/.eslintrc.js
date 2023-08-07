@@ -60,4 +60,22 @@ module.exports = {
       version: 'detect',
     },
   },
+
+  overrides: [
+    {
+      files: ['src/**/*.jsx', 'src/**/*.tsx', 'src/**/*.js', 'src/**/*.ts'],
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+      extends: [
+        'eslint:recommended',
+        'plugin:react/recommended',
+        'plugin:react-hooks/recommended',
+        'plugin:@typescript-eslint/recommended',
+        'prettier',
+      ],
+    },
+  ],
 };

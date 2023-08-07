@@ -50,7 +50,7 @@
     "prepare": "cd .. && husky install client/.husky"
   },
   "lint-staged": {
-    "*.{js,ts,tsx, jsx}": [
+    "src/**/*.{js,ts,tsx, jsx}": [
       "eslint --quiet --fix"
     ],
     "*.{json,md,html,js,jsx,ts,tsx}": [
