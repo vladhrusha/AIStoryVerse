@@ -5,6 +5,7 @@ import { AuthModule } from './Auth/auth.module';
 import { GPTModule } from './GPT/gpt.module';
 import { APIModule } from './API/api.module';
 import { PassportModule } from '@nestjs/passport';
+import { StoryModule } from './story/story.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { PassportModule } from '@nestjs/passport';
     PassportModule.register({ session: true }),
     GPTModule,
     APIModule,
+    StoryModule,
   ],
   controllers: [AppController],
   providers: [AppService],

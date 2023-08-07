@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import devKeys from '../../config/dev';
+import keys from '../../config/keys';
 import { Configuration, OpenAIApi } from 'openai';
 import logger from '../../../tools/logger';
 const configuration = new Configuration({
-  apiKey: devKeys.openAIKey,
+  apiKey: keys.openAIKey,
 });
 const openai = new OpenAIApi(configuration);
 
