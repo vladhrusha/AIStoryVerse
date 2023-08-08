@@ -1,6 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import * as storyDb from './story.database';
+import * as voteDb from '../vote/vote.database';
+
 import logger from '../../../tools/logger';
+import { Cron } from '@nestjs/schedule';
 @Injectable()
 export class StoryService {
   async postStory(req) {
@@ -44,5 +47,10 @@ export class StoryService {
   async deleteStory(req) {
     const { storyid } = req.body;
     return await storyDb.deleteStory(storyid);
+  }
+
+  @Cron('*/5 * * * * *')
+  handleCalculateRatings() {
+    voteDb.calculateRatings();
   }
 }

@@ -8,11 +8,14 @@ import { PassportModule } from '@nestjs/passport';
 import { StoryModule } from './story/story.module';
 import { UserModule } from './user/user.module';
 import { VoteModule } from './vote/vote.module';
+import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
   imports: [
-    AuthModule,
+    ScheduleModule.forRoot(),
     PassportModule.register({ session: true }),
+
+    AuthModule,
     GPTModule,
     APIModule,
     UserModule,
