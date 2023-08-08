@@ -1,4 +1,13 @@
-import { Controller, Get, Post, Put, Delete, Req, Res } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Put,
+  Delete,
+  Req,
+  Res,
+  Patch,
+} from '@nestjs/common';
 
 import { UserService } from './user.service';
 
@@ -26,4 +35,12 @@ export class UserController {
   // deleteUser(@Req() req) {
   //   return this.userService.deleteUser(req);
   // }
+  @Patch('/addBookmark')
+  addBookmark(@Req() req) {
+    return this.userService.addBookmark(req);
+  }
+  @Patch('/removeBookmark')
+  removeBookmark(@Req() req) {
+    return this.userService.removeBookmark(req);
+  }
 }

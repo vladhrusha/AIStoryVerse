@@ -12,7 +12,13 @@ export const getByGoogleId = async (googleId) => {
 export const getAllUsers = async () => {
   return await User.find();
 };
-// // insert
+// insert
+export const addBookmark = async ({ storyId, googleId }) => {
+  await User.updateOne(
+    { googleId: googleId },
+    { $addToSet: { bookmarks: storyId } },
+  );
+};
 //   // backlog for now
 // export const addUser = ({ nickname, firstname, lastname, password, salt }) => {
 //   const newUser = new User({
@@ -45,7 +51,13 @@ export const getAllUsers = async () => {
 //     },
 //   );
 // };
-// // delete
+// delete
+export const removeBookmark = async ({ storyId, googleId }) => {
+  await User.updateOne(
+    { googleId: googleId },
+    { $pull: { bookmarks: storyId } },
+  );
+};
 // export const deleteUserByNickname = async ({ nickname, deleted_at }) => {
 //   await User.updateOne(
 //     { nickname },

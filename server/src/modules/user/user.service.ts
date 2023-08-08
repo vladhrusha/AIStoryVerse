@@ -20,4 +20,15 @@ export class UserService {
   //     const {nickname, firstname, lastname, password} = req.body;
   //     return;
   //   }
+
+  async addBookmark(req) {
+    const { storyId, googleId } = req.body;
+    await userDb.addBookmark({ storyId, googleId });
+    return 'added bookmark';
+  }
+  async removeBookmark(req) {
+    const { storyId, googleId } = req.body;
+    await userDb.removeBookmark({ storyId, googleId });
+    return 'removed bookmark';
+  }
 }
