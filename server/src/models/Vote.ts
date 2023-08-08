@@ -1,12 +1,12 @@
 import mongoose from 'mongoose';
 
 const voteSchema = new mongoose.Schema({
-  storyTo: {
+  storyId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'stories',
     required: true,
   },
-  userFrom: {
+  voterId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'users',
     required: true,

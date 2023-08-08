@@ -3,3 +3,4 @@ cd client
 npm run lint-client
 npm run test
 cd ..
+ls
